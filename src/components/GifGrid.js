@@ -9,6 +9,14 @@ const GifGrid = ({ category }) => {
         const resp = await fetch(url);
         const data = await resp.json();
 
+        const gifs = data.map( img => {
+            return {
+                id: img.id,
+                title: img.title,
+                url: img.images?.downsized_medium.url
+            }
+        } )
+
         console.log(data);
 
     }
@@ -18,6 +26,8 @@ const GifGrid = ({ category }) => {
     return (
         <div>
             <h3 > { category } </h3>
+            <h3>{ count }</h3>
+            <button onClick={ ()=> setCount( count + 1 ) }></button>
         </div>
     )
 }
