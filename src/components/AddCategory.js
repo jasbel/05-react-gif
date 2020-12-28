@@ -15,7 +15,9 @@ const AddCategory = ( {setCategories} ) => {
         //evitar los vacios
         if (inputValue.trim().length > 2) {
             setCategories(cat => [...cat, inputValue]);
-            setInputValue(' ');
+
+            //vaciar input
+            setInputValue('');
         }
 
     }
@@ -38,6 +40,7 @@ const AddCategory = ( {setCategories} ) => {
     )
 }
 
+// obligar propiedades requeridas
 AddCategory.propTypes = {
     setCategories: PropTypes.func.isRequired
 }
