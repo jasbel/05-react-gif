@@ -14,7 +14,7 @@ const AddCategory = ( {setCategories} ) => {
 
         //evitar los vacios
         if (inputValue.trim().length > 2) {
-            setCategories(cat => [...cat, inputValue]);
+            setCategories(cat => [inputValue,...cat]);
 
             //vaciar input
             setInputValue('');
